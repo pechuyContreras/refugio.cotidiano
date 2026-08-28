@@ -15,7 +15,7 @@ tagline: "Refugio Cotidiano"
 description: >-
   Tu espacio seguro entre tanta prisa.
 
-url: ""
+url: "https://pechuycontreras.github.io"
 
 # Puedes dejar esta sección limpia o con tu correo si quieres que el botón de email siga funcionando abajo
 social:
@@ -59,7 +59,8 @@ pwa:
 
 paginate: 10
 
-baseurl: ""
+# The base URL of your site
+baseurl: "/refugio.cotidiano"
 
 kramdown:
   footnote_backlink: "&#8617;&#xfe0e;"
