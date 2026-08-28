@@ -39,6 +39,10 @@ avatar: assets/lib/logo.jpg
 
 toc: true
 
+author:
+  name: refugio.cotidiano
+  url: "https://www.instagram.com/refugio.cotidiano" # O tu URL de GitHub / sitio
+
 actions:
   edit_post:
     enabled: false
