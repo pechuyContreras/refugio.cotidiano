@@ -1,0 +1,130 @@
+# The Site Configuration
+
+# Import the theme
+theme: jekyll-theme-chirpy
+
+# The language of the webpage
+lang: es
+
+# Timezone
+timezone:
+
+# Main Settings
+title: refugio.cotidiano
+tagline: "Refugio Cotidiano"
+description: >-
+  Tu espacio seguro entre tanta prisa.
+
+url: ""
+
+# Puedes dejar esta sección limpia o con tu correo si quieres que el botón de email siga funcionando abajo
+social:
+  name: refugio.cotidiano
+  email: example@domain.com # Cambia por tu correo real si deseas que aparezca el sobrecito
+
+# Web Verification & Analytics (puedes dejarlas vacías por ahora)
+webmaster_verifications:
+  google:
+  bing:
+
+analytics:
+  google:
+    id: 
+
+# Prefer color scheme (déjalo vacío para que permita alternar claro/oscuro)
+theme_mode: 
+
+# Avatar / Logo en la barra lateral
+avatar: assets/lib/logo.jpg
+
+toc: true
+
+actions:
+  edit_post:
+    enabled: false
+    url: ""
+    static_url: false
+
+comments:
+  provider: 
+
+assets:
+  self_host:
+    enabled: 
+
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+
+paginate: 10
+
+baseurl: ""
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/

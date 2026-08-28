@@ -1,0 +1,65 @@
+<!--
+  The Side Bar
+-->
+
+<div id="sidebar" class="d-flex flex-column justify-content-between">
+  <div>
+    <!-- Site Avatar -->
+    <div class="profile-wrapper text-center">
+      <a href="{{ '/' | relative_url }}">
+        <img src="{{ site.avatar | relative_url }}" alt="avatar" onerror="this.style.display='none'" />
+      </a>
+
+      <a href="{{ '/' | relative_url }}" class="site-title d-block font-weight-bold mt-2">
+        {{ site.title }}
+      </a>
+
+      <p class="site-subtitle font-weight-lighter mb-0">{{ site.tagline }}</p>
+    </div>
+
+    <!-- Nav Links -->
+    <ul class="nav flex-column">
+      <li class="nav-item{% if page.layout == 'home' %} active{% endif %}">
+        <a href="{{ '/' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>{{ site.data.locales[site.lang].tabs.home | default: "Home" }}</span>
+        </a>
+      </li>
+
+      {% for tab in site.data.tabs %}
+        {% assign target = tab.url | relative_url %}
+        <li class="nav-item{% if page.url == target %} active{% endif %}">
+          <a href="{{ target }}" class="nav-link">
+            <i class="fa-fw {{ tab.icon }}"></i>
+            <span>{{ tab.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Sidebar Bottom / Social Icons (Aquí ponemos Instagram fijo) -->
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center justify-content-around">
+    <!-- Botón de Modo Oscuro/Claro -->
+    <button id="mode-toggle" class="btn link" type="button" aria-label="Mode Toggle">
+      <i class="fas fa-adjust"></i>
+    </button>
+
+    {% if site.social.email %}
+      {% assign email = site.social.email | encode_email %}
+      <a href="mailto:{{ email }}" aria-label="email" target="_blank" rel="noopener">
+        <i class="fas fa-envelope"></i>
+      </a>
+    {% endif %}
+
+    <!-- ENLACE DIRECTO A INSTAGRAM -->
+    <a href="https://www.instagram.com/refugio.cotidiano" aria-label="instagram" target="_blank" rel="noopener">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- RSS -->
+    <a href="{{ '/feed.xml' | relative_url }}" aria-label="rss">
+      <i class="fas fa-rss"></i>
+    </a>
+  </div>
+</div>
